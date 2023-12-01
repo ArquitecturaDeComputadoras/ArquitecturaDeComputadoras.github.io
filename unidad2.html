@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ARQUITECTURA DE COMPUTADORAS</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Special+Elite&family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+<a href="index.html" class="estilos">menu</a>    <h1 class="TituloPrincipal">UNIDAD 02</h1>
+    <hr>
+    <h2 class="tema">2.1 ORGANIZACION DEL PROCESADOR</h2>
+    <p class="texto">Un procesador, incluye tanto registros visibles por el usuario como registros de control/estado.<br>
+      Un procesador, incluye tanto registros visibles por el usuario como registros de
+      control/estado. Los registros visibles por el usuario pueden ser de uso general o
+      tener una utilidad especial, mientras que los registros de control y estado se usan
+      para controlar el funcionamiento del procesador, un claro ejemplo es el contador
+      de programa.<br><br>
+      Los procesadores utilizan la segmentación de instrucciones para acelerar la
+      ejecución. La segmentación de cauce se puede dividir en ciclo de instrucción en
+      varias etapas separadas que operan secuencialmente, tales como la captación de
+      instrucción, decodificación de instrucción, cálculo de direcciones de operando,
+      ejecución de instrucción y estructura del operando resultado.
+    </p>
+<ol class="lista">
+  <li>Los registros visibles por el usuario pueden ser de uso general o tener una utilidad especial.</li>
+  <li>Los registros de control y estado se usan para controlar el funcionamiento del procesador, un claro ejemplo es el contador de un programa.</li>
+</ol>
+<p class="texto">Los procesadores utilizan la segmentación de instrucciones para acelerar la ejecución.
+La segmentación de cauce se puede dividir en ciclo de instrucción en varias etapas separadas que operan secuencialmente, tales como:</p>
+<ul class="lista">
+  <li>Captar instrucciones: el procesador lee una instrucción de memoria (registro, cache o memoria principal).</li>
+<li>Interpretar instrucción: la instrucción se codifica para determinar qué acción es necesario.</li>
+<li>Captar datos: la ejecución de una instrucción puede exigir leer datos de memoria o de un módulo de E/S.</li>
+<li>Procesar datos: la ejecución de una instrucción puede exigir llevar a cabo alguna operación aritmética o lógica con los datos.</li>
+<li>Escribir datos: los resultados de una ejecución pueden exigir escribir datos en la memoria o en el módulo de E/S.</li>
+</ul>
+<h2 class="tema">2.2 ESTRUCTURA DE REGISTROS</h2>
+<p class="texto">El Registro está organizado en una estructura jerárquica compuesta por subárboles con
+sus respectivas claves, subclaves y entradas.<br>
+El contenido del Registro puede variar considerablemente de un equipo a otro, en función
+de los dispositivos, servicios y programas instalados en cada equipo.<br>
+Las claves pueden contener subclaves que, a su vez, pueden contener otras subclaves.
+Aunque la mayor parte de la información del Registro se almacena en disco y se
+considera permanente, algunos datos almacenados en claves volátiles se sobrescriben
+cada vez que se inicia el sistema operativo.</p><br>
+    <h3 class="subtema">2.2.1 Registros visibles para el usuario</h3>
+    <p class="texto">Minimizan el acceso entre el microprocesador y cpu, debido a que se encuentran
+dentro del CPU, son manipulables por lenguaje de máquina. Aquí tenemos los 3
+principales:</p>
+<ol class="lista">
+  <li>Registros de Datos:Manipulables a bajo nivel.</li>
+<li>Registro de Direcciones:Manipulables a bajo nivel.</li>
+<li>Registro de índice: sirve para direccionamiento, es similar al “PC”, pero tiene un valor base de
+autoincremento</li>
+</ol>
+  <h3 class="subtema">2.2.2 Registros de control y de estado</h3>
+  <p class="texto">Hay diversos registros del procesador que se emplean para controlar su
+funcionamiento. La mayoría de ellos, en la mayor parte de las máquinas, no son
+visibles por el usuario. Algunos de ellos pueden ser visibles por ciertas
+instrucciones máquina ejecutadas en un modo de controlo de sistema operativo.<br><br>
+Naturalmente, máquinas diferentes tendrán distintas organizaciones de registros y
+usarán distinta terminología. A continuación se presenta una lista razonablemente
+completa de tipos de registros, con una breve descripción.<br><br>
+Son esenciales cuatro registros para la ejecución de una instrucción:</p><br>
+<ul class="lista">
+  <li>Contador de programa (Program Counter, PC): contiene la dirección
+de la instrucción a captar.</li>
+<li>Registro de instrucción (lnstruction Register, IR): contiene la
+instrucción captada más recientemente.</li>
+<li>Registro de dirección de memoria (Memory Address Register, MAR):
+contiene la dirección de una posición de memoria.</li>
+<li>Registro intermedio de memoria (Memory Buffer Register, MBR):
+contiene la palabra de datos a escribir en memoria o la palabra leída
+más recientemente.</li>
+</ul>
+<p class="texto">No todos los procesadores tienen registros internos designados como MAR y
+MBR, pero es necesario algún mecanismo de almacenamiento intermedio
+equivalente mediante el cual se dé salida a los bits que van a ser transferidos al
+bus del sistema y se almacenen temporalmente los bits leídos del bus de datos.<br>
+Típicamente, el procesador actualiza PC después de cada captación de
+instrucción de manera que siempre apunta a la siguiente instrucción a ejecutar.
+Una instrucción de bifurcación o salto también modificará el contenido de PC. La
+instrucción captada se carga en IR, donde son analizados el código de operación y
+los campos de operando. Se intercambian datos con la memoria por medio de
+MAR y de MBR. En un sistema con organización de bus, MAR se conecta
+directamente al bus de direcciones, y MBR directamente al bus de datos. Los
+registros visibles por el usuario repetidamente intercambian datos con MBR.<br><br>
+Los cuatro registros que se acaban de mencionar se usan para la transferencia de
+datos entre el procesador y la memoria. Dentro del procesador, los datos tienen
+que ofrecerse a la ALU para su procesamiento.<br>
+La ALU puede tener acceso directo a MBR y a los registros visibles por el usuario.
+Como alternativa, puede haber registros intennedios adicionales en tomo a la ALU;
+estos registros sirven como registros de entrada y salida de la ALU e intercambian
+datos con MBR y los registros visibles por el usuario.</p><br><br>
+  <h3 class="subtema">2.2.3 Ejemplos de registros de CPU reales </h3>
+  <p class="texto">En algún diseño concreto de procesador es posible encontrar otros registros
+relativos a estado y control. Puede existir un puntero a un bloque de memoria que
+contenga información de estado adicional (por ejemplo, bloques de control de
+procesos). En las máquinas que usan interrupciones vectorizadas puede existir un
+registro de vector de interrupción. Si se utiliza una pila para llevar a cabo ciertas
+funciones (por ejemplo, llamada a subrutina), se necesita un puntero de pila del
+sistema. En un sistema de memoria virtual se usa un puntero a la tabla de
+páginas. Por último, pueden emplearse registros para el control de operaciones de
+E/S.<br><br>
+En el diseño de la organización de los registros de control y estado entran en
+juego varios factores.<br>
+Una cuestión primordial es el soporte del sistema operativo. Algunos tipos de
+información de control son de utilidad específica para el sistema operativo. Si el
+diseñador del procesador posee una comprensión funcional del sistema operativo
+que se va a utilizar, la organización de los registros puede adaptarse hasta cierto
+punto a ese sistema operativo.<br><br>
+Otra decisión importante en el diseño es la distribución de información de control
+entre registros y memoria. Es frecuente dedicar los primeros (más bajos) pocos
+cientos o miles de palabras de memoria para fines de control. El diseñador debe
+decidir cuánta información de control debiera estar en registros y cuánta en
+memoria. Se presenta el compromiso habitual entre coste y velocidad.<br><br></p>
+    <h2 class="tema">2.3 CICLO DE INSTRUCCION</h2>
+    <h3 class="subtema">2.3.1 Ciclo fetch-decode-execute </h3>
+  <p class="texto">Un ciclo de instrucción (también llamado ciclo de fetch-and-execute o ciclo
+de fetch-decode-execute en inglés) es el período que tarda la unidad central de
+proceso (CPU) en ejecutar una instrucción delenguaje máquina.<br>
+Comprende una secuencia de acciones determinada que debe llevar a cabo la
+CPU para ejecutar cada instrucción en un programa. Cada instrucción del juego de
+instrucciones de una CPU puede requerir diferente número de ciclos de instrucción
+para su ejecución. Un ciclo de instrucción está formado por uno o más ciclos
+máquina.<br><br>
+Para que cualquier sistema de proceso de datos basado en microprocesador (por
+ejemplo un ordenador) o microcontrolador (por ejemplo un reproductor de MP3)
+realice una tarea (programa) primero debe buscar cada instrucción en la memoria
+principal y luego ejecutarla.<br></p>
+<h3 class="subtema">2.3.2 Conjunto de instrucciones </h3>
+<p class="texto">La segmentación de instrucciones es similar al uso de una cadena de montaje en
+una fábrica de manufacturación. En las cadenas de montaje, el producto pasa a
+través de varias etapas de producción antes de tener el producto terminado. Cada
+etapa o segmento de la cadena está especializada en un área específica de la
+línea de producción y lleva a cabo siempre la misma actividad. Esta tecnología es
+aplicada en el diseño de procesadores eficientes.<br><br>
+A estos procesadores se les conoce como pipeline processors. Estos están
+compuestos por una lista de segmentos lineales y secuenciales en donde cada
+segmento lleva a cabo una tarea o un grupo de tareas computacionales. Los datos
+que provienen del exterior se introducen en el sistema para ser procesados. La
+computadora realiza operaciones con los datos que tiene almacenados
+en memoria, produce nuevos datos o información para uso externo.<br><br>
+Las arquitecturas y los conjuntos de instrucciones se pueden clasificar
+considerando los siguientes aspectos:</p><br>
+<ul class="lista">
+  <li>Almacenamiento de operandos en la CPU: dónde se ubican los operandos aparte
+de la memoria.</li>
+<li>Número de operandos explícitos por instrucción: cuántos operandos se expresan
+en forma explícita en una instrucción típica. Normalmente son 0, 1, 2 y 3.</li>
+<li>Posición del operando: ¿Puede cualquier operando estar en memoria?, o deben
+estar algunos o todos en los registros internos de la CPU. Cómo se especifica la
+dirección de memoria (modos de direccionamiento disponibles).</li>
+<li>Operaciones: Qué operaciones están disponibles en el conjunto de instrucciones.</li>
+</ul>
+<h3 class="subtema">2.3.3 Modos de direccionamiento </h3>
+<p class="texto">Los campos de direcciones en un formato de instrucción típico son relativamente pequeños. Nos
+gustaría poder referenciar un rango amplio de localidades en memoria principal o, para ciertos sistemas,
+memoria virtual. Para lograr este objetivo, una variedad de técnicas de direccionamiento han sido empleadas.
+Pueden involucrar algún tipo de compensación o intercambio entre el rango de instrucciones direccionables
+(flexibilidad) y el número de referencias a memoria en cada instrucción (complejidad del cálculo).</p>
+    <h3 class="subtitulo">Direccionamiento Inmediato</h3>
+    <p class="texto">Este modo puede ser usado para definir y utilizar constantes o establecer
+valores iniciales para las variables. Típicamente, el número será almacenado en
+complemento a dos; el bit de más a la izquierda se utiliza como bit de signo.
+Cuando el operando se guarda en un registro, el signo de bit se extiende hacia la
+izquierda hasta llegar al tamaño completo de la palabra.<br><br>
+La ventaja del direccionamiento inmediato es que no se requiere
+ninguna referencia a memoria fuera de la obtención de la instrucción, con lo cual
+se ahorra un ciclo de memoria/cache durante el ciclo de instrucción.<br><br>
+La desventaja es que el tamaño del número representado está restringido
+por el tamaño del campo de dirección, que, en muchos conjuntos de instrucciones,
+es pequeño comparado con la longitud de palabra.</p>
+<h3 class="subtitulo">Direccionamiento Directo</h3>
+<p class="texto">Ésta técnica fue común en las primeras generaciones de computadoras
+pero no es muy común en arquitecturas contemporáneas. Sólo requiere de una
+referencia a memoria sin ningún cálculo especial. La limitación obvia es que
+provee únicamente un espacio de direcciones limitado</p>
+<h3 class="subtitulo">Direccionamiento Indirecto</h3>
+<p class="texto">Con el direccionamiento directo, la longitud del campo de direcciones es
+usualmente menor al del tamaño de la palabra y, por tanto, limita el rango de
+direcciones. Una solución es hacer que el campo de direcciones se refiera a la
+dirección de una palabra en memoria, que a su vez contiene la dirección del
+operando.<br><br>
+Como se definio antes, los paréntesis deben ser interpretados como el
+contenido de. La ventaja obvia de este enfoque es que para una longitud de
+palabra N, se tiene un espacio de direcciones disponible de 2^N.<br><br>
+La desventaja es que la ejecución de la instrucción requiere de dos
+referencias a memoria para obtener el operando: una para obtener su dirección y
+una segunda para obtener su valor</p><br>
+
+<h3 class="subtitulo">Direccionamiento de Registro</h3>
+<p class="texto">El direccionamiento de registro es similar al direccionamiento directo.
+La única diferencia es que el campo de dirección se refiere a un registro en lugar
+de a una localidad de memoria principal: EA = R.<br><br>
+Para clarifica, si el contenido del campo de direcciones en una
+instrucción es 5, entonces R5 es la dirección deseada y el valor del operando se
+encuentra en R5. T icamente, un campo de dirección que referencía registros ṕ
+tendrá de entre 3 y 5 bits, de manera que entre 8 y 32 registros de propósito
+general pueden ser referenciados.<br><br>
+Las ventajas del direccionamiento de registros son que sólo se necesita
+un pequeño campo de dirección y que no se requiere hacer referencias a memoria
+que consumen mucho tiempo. Como se ha discutido antes, el tiempo de acceso
+para un registro interno del procesador es mucho menor que aquel para una
+dirección de memoria principal.<br><br>
+La desventaja de esta propuesta es que el espacio de direcciones es súmamente límitado (8 a 32 registros
+únicamente). Si el direccionamiento de registros se utiliza frecuentemente en un conjunto de instrucciones,
+quiere decir que los registros del procesador serán muy usados.</p>
+</body>
+<a href="index.html" class="estilos">menu</a></html>

@@ -1,0 +1,111 @@
+
+.TituloPrincipal{
+  font-family: 'DotGothic16', sans-serif;
+  margin-right: 25%;
+  margin-left: 45%;
+  margin-top: 5%;
+}
+.TituloPrimero{
+  font-family: 'DotGothic16', sans-serif;
+  text-align: center;
+  margin-top: 25%;
+}
+.Nombre{
+  font-family: 'Special Elite', cursive;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-top: 14%;
+}
+.contenedor{
+  margin-left: 35%;
+}
+.estilos{
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: black;
+}
+.tarjeta{
+  height: 14rem;
+  width: 14rem;
+  margin-top: 5%;
+  margin-left: auto;
+}
+.multiprocesadores{
+  margin-top: 5%;
+}
+
+hr{
+  width: 50%;
+  border-top: 5px dashed;
+}
+.segmentada{
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  height: 14rem;
+  width: 25rem;
+}
+.textoP{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin-right: 10%;
+  margin-left: 35%;
+  margin-bottom: 0;
+}
+.harvard{
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+.Unidad1{
+  font-family: 'Special Elite', cursive;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.tema{
+  font-family: 'DotGothic16', sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.texto{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+.subtema{
+  font-family: 'Special Elite', cursive;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+.subTemaTema{
+  font-family: 'Special Elite', cursive;
+  margin-right: 40%;
+  margin-left: 40%;
+}
+.subtitulo{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+.lista{
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+
+body {
+  background: linear-gradient(to bottom,white, white); /* Puedes ajustar los colores según tus preferencias */
+  margin: 0; /* Elimina el margen predeterminado del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+body {
+  color: black; /* Cambia el color del texto a blanco */
+}
